@@ -1,5 +1,6 @@
 package com.expoding.modularcrafting;
 
+import com.expoding.modularcrafting.config.confighandler;
 import com.expoding.modularcrafting.proxy.IProxy;
 import com.expoding.modularcrafting.reference.Reference;
 import cpw.mods.fml.common.Mod;
@@ -12,7 +13,7 @@ import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 public class ModularCrafting
 {
 
-    @SidedProxy(clientSide = "com.expoding.modularcrafting.proxy.ClientProxy", serverSide = "com.expoding.modularcrafting.proxy.ServerProxy")
+    @SidedProxy(clientSide = Reference.CLIENT_PROXY, serverSide = Reference.SERVER_PROXY)
     public static IProxy proxy;
 
     @Mod.Instance(Reference.MOD_ID)
@@ -21,7 +22,7 @@ public class ModularCrafting
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event)
     {
-
+        confighandler.init(event.getSuggestedConfigurationFile());
     }
 
     @Mod.EventHandler
