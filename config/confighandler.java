@@ -31,6 +31,7 @@ public class confighandler
             boolean enableTime = config.get(Reference.ADDON_CATEGORY, "Clock", "true", "Enable the clock upgrade").getBoolean(true);
             boolean enableLiquid = config.get(Reference.ADDON_CATEGORY, "Liquid", "true", "Enable the Liquid Storage Upgrade").getBoolean(true);
             int maxStructure = config.get(Reference.ADDON_CATEGORY, "StructuralMax", "5", "Set the maximum structural upgrade level (Max 5)").getInt(5);
+            int torchLevel = config.get(Reference.ADDON_CATEGORY, "LightLevel", "14", "Set how much light the light upgrade gives off").getInt(14);
 
 
 
